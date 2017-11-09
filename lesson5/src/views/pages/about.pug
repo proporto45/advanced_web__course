@@ -1,72 +1,62 @@
-//
-   Created by alexander.polyakov on 08.11.17.
+extends ../main.layout.pug
 
-<!DOCTYPE html>
-html(lang="en")
-head
+block content
   
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    
-title About
-body
-    .wrapper
-        section.section.hero
-            ul.socials
-                each item in ['vk', 'gh', 'in']
-                  li.socials__item
-                      a(href="" class=`socials__link socials__link_${item}`)
-            a(href="").hamburger
-            a(href="").down-arrow
-            .hero__title
-                img(src="../../").section-title
-                .user.hero__user-block
-                    .user__photo
-                    .user__name
-                    .user__desc
-        section.section.about
-          .about__left
-            svg.triangle.triangle_fill_white
-            .title.about__section-title
-              | Обо мне
-          .user-about
-            .user-about__picture
-            .user-about__title
-              .subtitle
-                | Кто я
-            .user-about__text
-              p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-          .about__right
-            svg.triangle.triangle_fill_beige
-            
-            .about-data
-              .about-data__description.about-user-info
-                .about-user-info__title
-                  .subtitle Чем я могу быть полезен
-                .about-user-info__text
-                  p Nulla in reprehenderit fugiat cupidatat cupidatat culpa labore adipisicing anim tempor ullamco ad ex.
-              .about-data__content
-                ul.skills
-                  - console.log(skills)
-                  each skill in ['Frontend', 'Backend', 'Workflow']
-                    li.skills__item
-                      .skill-section
-                        skill-section__title= skill
-                        ul.skill-section__list
-                          each skillName in ['HTML5','CSS3','Jquery']
-                            li.skills-section__item
-                              .skill__circle
-                                .skill__name= skillName
-                //- ul.skills
-                //-   each skill in ['Frontend', 'Backend', 'Workflow']
-                //-     li.skills__item
-                //-       .skill-section
-                //-         skill-section__title= skill
-                //-         ul.skill-section__list
-                //-           each skillName in ['HTML5','CSS3','Jquery']
-                //-             li.skills-section__item
-                //-               .skill__circle
-                //-                 .skill__name= skillName
-        section.section.map
+    section.section.hero
+      ul.socials
+        each item in ['vk', 'gh', 'in']
+          li.socials__item
+            a(href="" class=`socials__link socials__link_${item}`)
+      a(href="").hamburger
+      a(href="").down-arrow
+      .hero__title
+        img(src="../../").section-title
+        .user.hero__user-block
+          .user__photo
+          .user__name
+          .user__desc
+    section.section.about
+      .about__left
+        svg.triangle.triangle_fill_white
+        .title.about__section-title
+          | Обо мне
+      .user-about
+        .user-about__picture
+        .user-about__title
+          .subtitle
+            | Кто я
+        .user-about__text
+          p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+          p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+      .about__right
+        svg.triangle.triangle_fill_beige
+
+        .about-data
+          .about-data__description.about-user-info
+            .about-user-info__title
+              .subtitle Чем я могу быть полезен
+            .about-user-info__text
+              p Nulla in reprehenderit fugiat cupidatat cupidatat culpa labore adipisicing anim tempor ullamco ad ex.
+          .about-data__content
+            ul.skills
+              each skill in skills
+                each skillsArray, skillName in skill
+                  li.skills__item
+                    .skill-section
+                      .skill-section__title= skillName
+                      ul.skill-section__list
+                        each skillTitle in skillsArray
+                          li.skills-section__item
+                            .skill__circle
+                              .skill__name= skillTitle
+            //- ul.skills
+            //-   each skill in ['Frontend', 'Backend', 'Workflow']
+            //-     li.skills__item
+            //-       .skill-section
+            //-         skill-section__title= skill
+            //-         ul.skill-section__list
+            //-           each skillName in ['HTML5','CSS3','Jquery']
+            //-             li.skills-section__item
+            //-               .skill__circle
+            //-                 .skill__name= skillName
+    section.section.map

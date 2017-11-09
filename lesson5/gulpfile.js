@@ -17,13 +17,13 @@ gulp.task('server', function () {
 });
 
 gulp.task('pug', () => {
-  let locals = require('./content.json');
+  // let locals = require('./content.json');
 
   gulp.src('src/views/pages/**/*.pug')
     .pipe(plumber())
     .pipe(pug({
-      // locals : JSON.parse(fs.readFileSync('content.json', 'utf8')),
-      locals : locals,
+      locals : JSON.parse(fs.readFileSync('content.json', 'utf8')),
+      // locals : locals,
       pretty: true,
     }))
     .pipe(gulp.dest('dist'))
