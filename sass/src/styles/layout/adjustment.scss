@@ -1,0 +1,24 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  line-height: 1.42;
+  background: $white;
+}
+
+.wrapper {
+  &:after {
+    content: '';
+    display: block;
+    height: $footer-height;
+  }
+}
+
+footer {
+  height: $footer-height;
+  margin-top: -$footer-height;
+}
