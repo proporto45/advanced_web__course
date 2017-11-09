@@ -1,1 +1,0 @@
-all you need is - npm i;
