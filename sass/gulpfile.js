@@ -4,6 +4,8 @@ var sassGlob = require('gulp-sass-glob');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var spritesmith = require('gulp.spritesmith');
+var csso = require('gulp-csso');
+
 
 var SRC_DIR = './src/';
 var DIST_DIR = './dist/';
@@ -44,6 +46,7 @@ gulp.task('sass', function() {
             browsers: ['> 5%'],
             cascade: false
         }))
+        .pipe(csso())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(path.sass.dist));
 });

@@ -10,3 +10,19 @@
   transform: translateX(-50%);
   transition: .3s;
 }
+
+.social {
+  display: block;
+}
+
+$socials: vk, fb, tw;
+
+@each $item in $socials {
+  .social_#{$item} {
+    @extend .icon-#{$item};
+
+    &:hover {
+      @extend .icon-#{$item}-hover ;
+    }
+  }
+}
