@@ -1,0 +1,75 @@
+extends ../main.layout.pug
+
+block content
+
+  section.section.hero
+    ul.socials
+      each item in ['vk', 'gh', 'in']
+        li.socials__item
+          a(href="" class=`socials__link socials__link_${item}`)
+    a(href="").hamburger
+    a(href="").down-arrow
+    .hero__title
+      img(src="../../").section-title
+      .user.hero__user-block
+        .user__photo
+        .user__name
+        .user__desc
+  section.section.about
+    .about__left
+      svg.triangle.triangle_fill_white
+      .title.about__section-title
+        | Обо мне
+    .user-about
+      .user-about__picture
+      .user-about__title
+        .subtitle
+          | Кто я
+      .user-about__text
+        p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+    .about__right
+      svg.triangle.triangle_fill_beige
+
+      .about-data
+        .about-data__description.about-user-info
+          .about-user-info__title
+            .subtitle Чем я могу быть вам полезен
+          .about-user-info__text
+            p Nulla in reprehenderit fugiat cupidatat cupidatat culpa labore adipisicing anim tempor ullamco ad ex.
+        .about-data__content
+          ul.skills
+            each skill_all in content[0].skills
+              each skill in skill_all
+                each skillsArray, skillName in skill
+                  li.skills__item
+                    .skill-section
+                      .skill-section__title= skillName
+                      ul.skill-section__list
+                        each skillTitle in skillsArray
+                          li.skills-section__item
+                            .skill__circle
+                              .skill__name= skillTitle
+          //- ul.skills
+          //-   each skill in ['Frontend', 'Backend', 'Workflow']
+          //-     li.skills__item
+          //-       .skill-section0
+          //-         skill-section__title= skill
+          //-         ul.skill-section__list
+          //-           each skillName in ['HTML5','CSS3','Jquery']
+          //-             li.skills-section__item
+          //-               .skill__circle
+          //-                 .skill__name= skillName
+  section.section.map
+    .map__title
+      a(href="../../").map-bg
+      .contacts.map__contacts-block
+        .contacts__title
+        .contacts-block
+          ul.contact_me
+            each contact_all in content[1].contacts
+              each contact_descr, contact_title in contact_all
+                - console.log(contact_title)
+                li.contact_me__item
+                  span(class=`contact_me__icon contact_me__icon_${contact_title}`)
+                  span.contact_me__title= contact_descr
+      .map__footer
