@@ -3,21 +3,30 @@ extends ../main.layout.pug
 block content
 
   section.section.hero
+    .hero__bg
+      img(src="img/bg/portfolio.jpg", alt="").hero__bg-img
     ul.socials
       each item in ['vk', 'gh', 'in']
         li.socials__item
           a(href="" class=`socials__link socials__link_${item}`)
     a(href="").hamburger
     a(href="").down-arrow
+      img(src="img/icons/arrow_down.svg" alt="").down-arrow_icon
     .hero__title
-      img(src="../../").section-title
+      img(src="img/decor/portfolio-header.png").section-title
       .user.hero__user-block
         .user__photo
-        .user__name
-        .user__desc
+          .user__photo-avatar
+            img(src="img/content/user.jpg" alt="").user__photo-img
+        .user__name Александр Поляков
+        .user__desc Frontend Developer
   section.section.about
     .about__left
-      svg.triangle.triangle_fill_white
+      svg(
+        viewbox="0 0 1000 100" 
+        preserveAspectRatio="none"
+        class="triangle triangle_fill_white about__triangles")
+        polygon(points="0,0 0,100 1000,100")
       .title.about__section-title
         | Обо мне
     .user-about
@@ -28,8 +37,11 @@ block content
       .user-about__text
         p Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
     .about__right
-      svg.triangle.triangle_fill_beige
-
+      svg(
+        viewbox="0 0 1000 100" 
+        preserveAspectRatio="none"
+        class="triangle triangle_fill_beige about__triangles")
+        polygon(points="0,100 1000,100 1000,0")
       .about-data
         .about-data__description.about-user-info
           .about-user-info__title
@@ -49,27 +61,3 @@ block content
                           li.skills-section__item
                             .skill__circle
                               .skill__name= skillTitle
-          //- ul.skills
-          //-   each skill in ['Frontend', 'Backend', 'Workflow']
-          //-     li.skills__item
-          //-       .skill-section0
-          //-         skill-section__title= skill
-          //-         ul.skill-section__list
-          //-           each skillName in ['HTML5','CSS3','Jquery']
-          //-             li.skills-section__item
-          //-               .skill__circle
-          //-                 .skill__name= skillName
-  section.section.map
-    .map__title
-      a(href="../../").map-bg
-      .contacts.map__contacts-block
-        .contacts__title
-        .contacts-block
-          ul.contact_me
-            each contact_all in content[1].contacts
-              each contact_descr, contact_title in contact_all
-                - console.log(contact_title)
-                li.contact_me__item
-                  span(class=`contact_me__icon contact_me__icon_${contact_title}`)
-                  span.contact_me__title= contact_descr
-      .map__footer

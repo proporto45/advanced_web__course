@@ -1,0 +1,13 @@
+section.section.map
+  .map__title
+    a(href="../../").map-bg
+    .contacts.map__contacts-block
+      .contacts__title
+      .contacts-block
+        ul.contact_me
+          each contact_all in content[1].contacts
+            each contact_descr, contact_title in contact_all
+              - console.log(contact_title)
+              li.contact_me__item
+                span(class=`contact_me__icon contact_me__icon_${contact_title}`)
+                span.contact_me__title= contact_descr

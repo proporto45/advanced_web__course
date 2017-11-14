@@ -1,0 +1,18 @@
+footer.footer
+  .footer__row.footer__row_top
+    .footer__left
+      ul.nav-menu
+        each nav_item in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
+          li.nav-menu__item
+            a(href="#").nav-menu__link= nav_item
+    .footer__right
+      .footer.socials_footer
+        each footer_icon in ['vk', 'gh', 'in']
+          li.socials__item
+            a(href="#").socials__link
+            svg.socials__icon
+.footer__row
+  .footer__left
+    .footer__about Я веб разработчик из Москвы. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+  .footer__right
+    .footer__about-user-name &copy; Александр Поляков | Создано с любовью |2017
