@@ -85,8 +85,7 @@ gulp.task('sass', () => {
 
 
 gulp.task('watch', () => {
-  gulp.watch(path.pug.src, ['pug']);
-  gulp.watch(path.sass.src, ['sass'])
+  gulp.watch([path.pug.src,path.sass.src], ['pug', 'sass']);
 });
 
 gulp.task('default', ['pug', 'sass', 'server', 'watch']);

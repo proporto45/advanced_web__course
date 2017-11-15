@@ -1,6 +1,10 @@
+$white: #fff;
+$beige: #eeebdf;
 // layout setups
 @import "layout/setups.scss";
 @import "layout/fonts.scss";
 
+// mixins
+@import "helpers/mixins";
 // blocks setup
 @import "blocks/**/*";
