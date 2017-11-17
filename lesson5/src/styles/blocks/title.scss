@@ -2,4 +2,38 @@
   color: $main-font-color;
   font-size: 63px;
   @include sansus();
+  text-transform: uppercase;
+  padding: 45px 70px;
+  display: inline-block;
+  position: relative;
+  $margin: 40px;
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    @include centered(y);
+    background: url(../img/decor/circles_left.png);
+    width: 40px;
+    height: 14px;
+    opacity: .2;
+  }
+
+  &:after {
+    right: $margin;
+  }
+
+  &:before {
+    transform: scale(-1, 1);
+    left: $margin;
+  }
+}
+
+.subtitle {
+  color: $general-font-color;
+  font-size: 35px;
+  @include sansus();
+  text-align: center;
+  text-transform: uppercase;
 }

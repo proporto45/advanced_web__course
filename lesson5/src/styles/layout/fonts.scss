@@ -3,9 +3,9 @@
 
 @font-face {
 	font-family: 'sansus';
-	src: url('../fonts/Sansus-Webissimo-Regular.ttf') format('ttf');
-	// font-weight: normal;
-	// font-style: normal;
+	src: url('../fonts/Sansus-Webissimo-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @mixin sansus() {
